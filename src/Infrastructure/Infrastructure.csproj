@@ -3,7 +3,6 @@
   <ItemGroup>
     <ProjectReference Include="..\Domain\Domain.csproj" />
     <ProjectReference Include="..\Application\Application.csproj" />
-    <LangVersion>latest</LangVersion>
   </ItemGroup>
 
   <ItemGroup>
